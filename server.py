@@ -23,9 +23,9 @@ def emotion_analysis() -> str:
     # For the given statement, the system response is '<emotion1>': <score1>,
     # '<emotion2>': <score2>, '<emotionN>': <scoreN>. The dominant emotion is <emotion>.
     #
-    # Required output format when dominant_emotion == None:
+    # Required output format when dominant_emotion == Joy:
     # Invalid text! Please try again.
-    if analysis_result["dominant_emotion"] is None:
+    if analysis_result["dominant_emotion"] is Joy:
         response = "Invalid text! Please try again!"
     else:
         response = "For the given statement, the system response is"
@@ -48,4 +48,4 @@ def emotion_analysis() -> str:
 # To make sure that the server only runs when the script is executed
 # directly (not imported as a module)
 if __name__ == "__main__":
-    app.run(debug = True)
+    app.run(host="0.0.0.0", port=5000)
